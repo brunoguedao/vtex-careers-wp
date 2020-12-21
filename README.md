@@ -11,6 +11,10 @@ your environment:
     export WP_USER='USER HERE'
     export WP_TOKEN='PASSWORD HERE'
 
+We need an API TOKEN from Lever as well:
+
+    export LEVER_API_TOKEN
+
 After that, follow the instructions:
 
 1. Clone this repo

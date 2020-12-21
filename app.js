@@ -5,6 +5,7 @@ const base64 = require("base-64");
 const URL = "http://mmg.vfg.mybluehost.me/careers/wp-json";
 const USER = process.env.WP_USER;
 const TOKEN = process.env.WP_TOKEN;
+const LEVER_API_TOKEN = process.env.LEVER_API_TOKEN;
 
 const wp = new WPAPI({
   endpoint: URL,
@@ -22,7 +23,7 @@ async function getLeverData() {
   const postings = await (
     await fetch("https://api.lever.co/v1/postings?limit=1000&state=published", {
       headers: {
-        Authorization: `Basic ${base64.encode(process.env.LEVER_API_TOKEN)}`,
+        Authorization: `Basic ${base64.encode(LEVER_API_TOKEN)}`,
       },
     })
   ).json();
